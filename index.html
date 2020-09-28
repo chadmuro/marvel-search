@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="sass/main.css">
+    <title>Marvel Search</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <img src="img/logo.png" alt="logo" class="header__logo-img">
+        </div>
+        <div class="header__search">
+            <input type="text" class="header__search-input" placeholder="Search character name">
+            <button class="header__search-button"><i class="fas fa-search header__search-icon"></i></button> 
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="character">
+            <div class="character__image">
+                <img src="img/character.png" alt="Character Image" class="character__image-img">
+            </div>
+            <div class="character__text">
+                <h1 class="character__text-name">Spiderman</h1>
+                <p class="character__text-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error quibusdam at, nisi facere qui quasi adipisci aut voluptatibus cumque quam illo quo provident eius temporibus dolorem quia quos non culpa.</p>
+            </div>
+        </div>
+        <div class="character">
+            <div class="character__image">
+                <img src="img/character.png" alt="Character Image" class="character__image-img">
+            </div>
+            <div class="character__text">
+                <h1 class="character__text-name">Spiderman</h1>
+                <p class="character__text-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error quibusdam at, nisi facere qui quasi adipisci aut voluptatibus cumque quam illo quo provident eius temporibus dolorem quia quos non culpa.</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p class="footer__text">&copy; 2020 by Chad Murobayashi. Built using the <a href="https://developer.marvel.com/" target="_blank">MARVEL API</a>.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

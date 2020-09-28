@@ -1,0 +1,11 @@
+.footer {
+    flex: 0 0 60px; 
+    background-color: $color-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__text {
+        font-size: 1.5rem;
+    }
+}
