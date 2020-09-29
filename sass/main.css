@@ -48,13 +48,14 @@ body {
   background-color: #404040;
   -webkit-box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.3);
           box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  height: 18rem;
 }
 
 .character__image {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 12rem;
           flex: 0 0 12rem;
-  min-height: 18rem;
 }
 
 .character__image-img {
@@ -67,6 +68,7 @@ body {
       -ms-flex: 1;
           flex: 1;
   padding: 1rem;
+  overflow: scroll;
 }
 
 .character__text-name {
@@ -74,10 +76,17 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   font-style: italic;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
 .character__text-description {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+  line-height: 2rem;
+}
+
+.character:hover .character__text-name {
+  color: #ed1d24;
 }
 
 .footer {
@@ -115,6 +124,7 @@ body {
 
 .header__logo {
   margin: 1rem 2rem;
+  cursor: pointer;
 }
 
 .header__logo-img {
