@@ -7,5 +7,18 @@
 
     &__text {
         font-size: 1.5rem;
-    }
+
+        &-link {
+            text-transform: uppercase;
+
+            &:hover {
+               font-size: 1.8rem; 
+            }
+
+            &:link,
+            &:visited {
+                color: $color-gray-dark;
+            }
+        }
+    }  
 }
