@@ -30,12 +30,15 @@ searchInput.addEventListener('change', (e) => {
             .then(res => res.json())
             .then(data => {
                 const returnedData = data.data.results;
-                for (let i = 0; i < returnedData.length; i++) {
-                    let dataset = returnedData[i];
-                    let newDiv = document.createElement('div');
-                    newDiv.classList.add('character');
-                    newDiv.id = `${dataset.id}`;
-                    newDiv.innerHTML = `
+                if (!returnedData.length) {
+                    body.innerText = 'Please search again';
+                } else {
+                    for (let i = 0; i < returnedData.length; i++) {
+                        let dataset = returnedData[i];
+                        let newDiv = document.createElement('div');
+                        newDiv.classList.add('character');
+                        newDiv.id = `${dataset.id}`;
+                        newDiv.innerHTML = `
                         <div class="character__image">
                             <img src="${dataset.thumbnail.path}.jpg" alt="${dataset.name}" class="character__image-img">
                         </div>
@@ -44,8 +47,9 @@ searchInput.addEventListener('change', (e) => {
                             <p class="character__text-description">${dataset.description}</p>
                         </div>
                     `;
-                body.appendChild(newDiv);
-            }      
+                        body.appendChild(newDiv);
+                    } 
+                }      
         });
     }
 });
@@ -78,6 +82,48 @@ body.addEventListener('click', (e) => {
     overlay.classList.remove('hide');
     });
 });
+
+
+// function getData(e) {
+//     body.innerHTML = '';
+
+//     if (e.target.value) {
+//         fetch(`${url}?nameStartsWith=${e.target.value}&limit=10&apikey=${API_KEY}`)
+//             .then(res => {
+//                 if(res.ok) {
+//                     return res.json();
+//                 } else {
+//                     throw new Error('Something went wrong');
+//                 }
+//             })
+//             .then(data => {
+//                 const returnedData = data.data.results;
+//                 for (let i = 0; i < returnedData.length; i++) {
+//                     let dataset = returnedData[i];
+//                     let newDiv = document.createElement('div');
+//                     newDiv.classList.add('character');
+//                     newDiv.id = `${dataset.id}`;
+//                     newDiv.innerHTML = `
+//                         <div class="character__image">
+//                             <img src="${dataset.thumbnail.path}.jpg" alt="${dataset.name}" class="character__image-img">
+//                         </div>
+//                         <div class="character__text">
+//                             <h1 class="character__text-name">${dataset.name}</h1>
+//                             <p class="character__text-description">${dataset.description}</p>
+//                         </div>
+//                     `;
+//                     body.appendChild(newDiv);
+//                 }
+//             })
+//             .catch(error => {
+//                 console.log(error);
+//             });
+//         }
+// }
+
+
+
+
 
 // Close selected box and return to search items
 overlay.addEventListener('click', (e) => {
